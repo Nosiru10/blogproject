@@ -1,3 +1,4 @@
+import os
 """
 Django settings for blog_project project.
 
@@ -53,11 +54,12 @@ ROOT_URLCONF = 'blog_project.urls'
 
 # blog_project/settings.py
 
-TEMPLATES = [
+
+TEMPLATES = [  
     {
-    
+
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')], # new
+        'DIRS': [str(BASE_DIR.joinpath('templates'))], # new
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,7 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATICFILES_DIR = [os.path.join(BASE_DIR, "static")
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

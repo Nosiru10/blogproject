@@ -1,0 +1,23 @@
+/* static/css/base.css */
+
+header h1 a {
+
+    color: red;
+
+}
+
+<!-- templates/base.html -->
+
+{% load static %}
+
+<html>
+
+  <head>
+
+     <titte>Django blog</title>
+     
+     <link href="{% static 'css/base.css' %}" rel="stylesheet">
+
+     </head>
+     ...
+
